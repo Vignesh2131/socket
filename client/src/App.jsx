@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import {io} from "socket.io-client"
 import {Button, Container, Stack, TextField, Typography} from "@mui/material"
 function App() {
-  const socket = useMemo(() => io("http://localhost:3000"), []);
+  const socket = useMemo(() => io("http://localhost:3000",{withCredentials:true}), []);
   const [roomName, setRoomName] = useState("");
   const [message, setMessage] = useState("");
   const [roomMessage, setRoomMessage] = useState("");
